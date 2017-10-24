@@ -64,5 +64,6 @@
 		}
 		rmdir($dir);
 	}
+	//测试
 	delDir($dir)
 ?>
