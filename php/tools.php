@@ -46,4 +46,23 @@
 	}
 	//测试
 	thumb('timg.jpg',200,200);
+
+
+
+		//删除非空目录
+	function delDir($dir){
+		$files = scandir($dir);
+		foreach ($files as $key => $value) {
+			if($key>1){
+				$file = $dir.'/'.$value;
+				if(is_dir($file)){
+					delDir($file);
+				}else{
+					unlink($file);
+				}
+			}
+		}
+		rmdir($dir);
+	}
+	delDir($dir)
 ?>
